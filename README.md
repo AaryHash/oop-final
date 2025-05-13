@@ -9,19 +9,17 @@ I believe I will find that the higher FC Barcelona places in the league, the mor
 ## Section 2: Methods
 I created a Python script to make use of the NY Times API and gather the data I needed. Here are some of the most important aspects of the script.
 
-![API Key and URL](https://aaryhash.github.io/oop-final/code-image1.png)
+![API Key and URL](code-image1.png)
 
 The first part, and arguably the most important, was inputting the constants for the API key and URL. Without these, I would be unable to make use of the NY Times API and gather the information I was searching for.
 
-![Get hits function](https://github.com/AaryHash/oop-final/blob/main/code-image2.png?raw=true)
-
+![Get hits function](code-image2.png)
 After my constants and various variables were prepared, I needed to create a function to obtain the number of hits of certain parameters. I knew I needed to do 10 API calls, so a function would allow me to avoid repeating code and keep everything more succinct. The function takes in a beginning date, end date, and any other parameters that I need (like queries and tags), and returns the hits.
 
-![For loop that uses get hits function](https://aaryhash.github.io/oop-final/code-image3.png)
-
+![For loop that uses get hits function](code-image3.png)
 This for loop makes use of a constant DATES dictionary that I created that holds key:value pairs of the beginning and ending dates for each season of La Liga from 2014-2024. It then iterates through each season, using the get_hits function that we created earlier to input a key:value pair into our data dictionary that holds the amount of hits procured for each season. I also use a sleep function to take a break every 12 seconds, so I do not exceed our maximum API calls per minute.
 
-![Write data to csv](https://aaryhash.github.io/oop-final/code-image4.png)
+![Write data to csv](code-image4.png)
 
 Finally, I must permanently save what I have done. I write the newly cleaned up data to a CSV file, alongside the season it is associated with and the final standing for FC Barcelona in each season (which is information I was able to find documented on Wikipedia).
 
@@ -29,7 +27,7 @@ With this, the process is complete. Data has been extracted from the NY Times AP
 ## Section 3: Findings
 Using the CSV file that I created, I was able to create a graph of the data.
 
-![Graph of data](https://aaryhash.github.io/oop-final/graph.jpg)
+![Graph of data](graph.jpg)
 
 In the red, we see the number of hits for travel articles referencing Barcelona during each season, and in the blue, we see the FC Barcelona final standing for each season. What we expect to see is an inverse relationship, where a lower number for the standing (which is really a higher placement in the league) leads to a higher amount of hits.
 
