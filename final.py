@@ -8,7 +8,7 @@ import csv
 import pathlib
 
 # Declare constants
-API_KEY = "vTFlHvOpKys3LRZzdCVI6OO7sHNAdGby"
+API_KEY = "your-api"
 
 URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
 
